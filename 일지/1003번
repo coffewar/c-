@@ -1,0 +1,28 @@
+- 푸는 데 걸린 시간 : 4시간
+- 내용 : 동적계획법 ㅡ> 점화식을 이용해 문제를 분할, 계산시간을 단축함, 메모이제이션 관련
+동적계획법을 이해하는데만 2시간 정도 걸렸다. 알고 나니까 단순히 값이 변하는 규칙을 코드로 그대로 적어놓은 것에 불과했다. 옛날에 배웠는데도 이렇게 걸리다니... 공부가 시급하다.
+- 기록 : 
+
+'#include <stdio.h>
+
+void fibonacci(int N) {
+    int last, current, result;
+    current = 1, last = result = 0;
+    int i;
+    for (i = 0; i <=N; i++) {
+        last = current;
+        current = result;
+        result = last + current;
+    }
+    printf("%d %d\n", last, current);
+}
+
+int main() {
+    int N,M;
+    int i;
+    scanf("%d", &N);
+    for (i=0; i < N; i++) {
+        scanf("%d", &M);
+        fibonacci(M);
+    }
+}'
